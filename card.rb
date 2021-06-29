@@ -21,7 +21,7 @@ class Card
         @face_value.to_s 
     end
 
-    def ==(card)
-        self.face_value == card.face_value 
-    end
+    # def ==(card)
+    #     self.face_value == card.face_value 
+    # end
 end
