@@ -45,6 +45,7 @@ class Board
         @grid.each_with_index do |row, i|
             row.each_with_index do |column, j|
                # pos= row,column # removed brackets
+               #debugger
                 @grid[i][j] = random_card
             end 
         end 
@@ -52,17 +53,8 @@ class Board
     end
 
     def random_card
-        used_card = @deck_half.sample 
-        @deck_half.delete(used_card)
-        @other_half << used_card 
-        
-        if @deck_half.empty? 
-            pair = @other_half.sample 
-            @other_half.delete(pair)
-            return pair 
-        end     
-
-        used_card 
+        full_deck=(@deck_half+@deck_half).shuffle
+        return full_deck.pop
     end
 
 
