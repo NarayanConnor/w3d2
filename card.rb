@@ -14,7 +14,7 @@ class Card
     end
 
     def reveal
-        @face_value 
+        @face_down = false  
     end
 
     def to_s
